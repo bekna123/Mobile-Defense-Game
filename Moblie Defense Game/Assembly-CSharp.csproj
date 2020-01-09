@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BulletBehavior.cs" />
+    <Compile Include="Assets\Scripts\BulletStat.cs" />
     <Compile Include="Assets\Scripts\CharacterBehavior.cs" />
     <Compile Include="Assets\Scripts\CharacterStat.cs" />
     <Compile Include="Assets\Scripts\CreateCharacter.cs" />
