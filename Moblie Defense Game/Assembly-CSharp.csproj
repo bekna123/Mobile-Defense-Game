@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\MonsterBehavior.cs" />
     <Compile Include="Assets\Scripts\MonsterStat.cs" />
+    <Compile Include="Assets\Scripts\ObjectPooler.cs" />
     <Compile Include="Assets\Scripts\StartManager.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/정우현/unity_project/Mobile-Defense-Game/Moblie Defense Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
