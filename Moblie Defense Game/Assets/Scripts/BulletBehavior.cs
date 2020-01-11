@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,6 @@ public class BulletBehavior : MonoBehaviour {
     public BulletStat bs { get; set; }
 
     public float activeTime = 3.0f;
-    private float spawnTime;
 
     public GameObject character;
     
@@ -19,23 +19,28 @@ public class BulletBehavior : MonoBehaviour {
     public void spawn()
     {
         gameObject.SetActive(true);
-        spawnTime = Time.time;
     }
 
-	void Start () {
+    private IEnumerator BulletInactive(float activeTime)
+    {
+        yield return new WaitForSeconds(activeTime);
+        gameObject.SetActive(false);
+    }
+
+
+    private void OnEnable()
+    {
+        StartCoroutine(BulletInactive(activeTime));
+    }
+
+    
+
+    void Start () {
 
 	}
 	
 	void Update () {
-        if(Time.time - spawnTime < activeTime)
-        {
-            transform.Translate(Vector2.right * bs.speed * Time.deltaTime);
-        }
-        else
-        {
-            gameObject.SetActive(false);
-        }
-        
+        transform.Translate(Vector2.right * bs.speed * Time.deltaTime);
 	}
 
     private void OnTriggerEnter2D(Collider2D other)
